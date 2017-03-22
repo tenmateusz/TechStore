@@ -8,6 +8,8 @@ namespace ITStore.Controllers
 {
     public class HomeController : Controller
     {
+        IEnumerable<string> lista = new List<string>();
+
         public ActionResult Index()
         {
             return View();
