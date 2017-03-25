@@ -11,6 +11,8 @@ namespace ITStore.App_Start
     using Ninject;
     using Ninject.Web.Common;
 
+    
+
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -53,6 +55,8 @@ namespace ITStore.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            System.Web.Mvc.DependencyResolver.SetResolver(
+                new ITStore.Infrastructure.NinjectDependecyResolver(kernel));
         }        
     }
 }
